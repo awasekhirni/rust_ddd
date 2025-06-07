@@ -1,0 +1,68 @@
+project/
+├── .env
+├── Cargo.toml
+├── src/
+│   ├── main.rs
+│   ├── lib.rs
+│   │
+│   ├── config/
+│   │   ├── mod.rs
+│   │   ├── settings.rs          # Application configuration
+│   │   └── di.rs               # Dependency injection
+│   │
+│   ├── domain/
+│   │   └── users/
+│   │       ├── mod.rs
+│   │       ├── model.rs        # User entity
+│   │       ├── repository.rs   # Repository trait
+│   │       └── errors.rs       # Domain errors
+│   │
+│   ├── application/
+│   │   └── users/
+│   │       ├── mod.rs
+│   │       ├── service.rs      # Application service
+│   │       └── dto.rs          # Data Transfer Objects
+│   │
+│   ├── infrastructure/
+│   │   ├── api/
+│   │   │   └── users/
+│   │   │       ├── mod.rs
+│   │   │       ├── controller.rs
+│   │   │       ├── routes.rs
+│   │   │       └── validation.rs
+│   │   │
+│   │   ├── persistence/
+│   │   │   ├── mod.rs
+│   │   │   ├── database.rs     # DB connection setup
+│   │   │   └── users/
+│   │   │       ├── mod.rs
+│   │   │       └── repository.rs # Concrete repository implementation
+│   │   │
+│   │   └── logging/
+│   │       ├── mod.rs
+│   │       ├── logger.rs
+│   │       └── middleware.rs   # Logging middleware
+│   │
+│   └── shared/
+│       ├── mod.rs
+│       ├── error.rs            # Common error types
+│       ├── utils.rs
+│       └── validation.rs
+│
+├── tests/
+│   ├── integration/
+│   │   └── users/
+│   │       └── mod.rs
+│   └── unit/
+│       └── users/
+│           ├── mod.rs
+│           ├── service_test.rs
+│           └── repository_test.rs
+│
+├── logs/
+│   ├── app.log
+│   ├── errors.log
+│   └── audit.log
+│
+└── migrations/                 # Database migrations (if using SQL)
+    └── *.sql
